@@ -1,0 +1,38 @@
+﻿/* Adjust the table layout *//*
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    // Add padding to table cells 
+    table th,
+    table td {
+        padding: 8px;
+    }
+
+    // Add a border to the table 
+    table th,
+    table td {
+        border: 1px solid #ccc;
+    }
+
+    // Add spacing between table cells 
+    table td {
+        text-align: left;
+    }
+
+    // Add spacing between rows 
+    table tbody tr {
+        border-bottom: 1px solid #ccc;
+    }
+
+    // Add spacing to the "Edit" column 
+    table td:last-child {
+        padding-right: 20px;
+    }
+
+// Add space between properties and Add New Patient button 
+.add-patient-button-container {
+    margin-top: 20px;
+}*/
+ 

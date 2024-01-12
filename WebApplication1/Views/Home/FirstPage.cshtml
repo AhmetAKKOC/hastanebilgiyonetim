@@ -1,0 +1,57 @@
+﻿<style>
+    .login-container form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .login-container form div {
+            margin-bottom: 10px;
+        }
+
+        .login-container form button {
+            margin-top: 10px;
+        }
+</style>
+
+@{
+    // Sayfa başlığını belirlemek için ViewData üzerinden "Title" değerini kullanıyoruz.
+    ViewData["Title"] = "Yönetici Girişi";
+}
+
+<div class="header-container">
+    <div class="page-title">
+        <!-- Sayfa başlığını ekrana yazdırmak için ViewData üzerindeki "Title" değerini kullanıyoruz. -->
+        <h1>@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="login-container">
+    <form method="post">
+        <div>
+            <label for="username">Kullanıcı Adı:</label>
+            <!-- Kullanıcı adı girişi için bir metin kutusu oluşturuyoruz. -->
+            <input type="text" id="username" name="username" required>
+        </div>
+        <!--<div>
+            <label for="username">Hasta Adı:</label>
+            <input type="text" id="hastaAdi" name="hastaAdi" required>
+        </div>-->
+        <div>
+            <label for="password">Şifre:</label>
+            <!-- Şifre girişi için bir şifre metin kutusu oluşturuyoruz. -->
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        @if (ViewData["LoginError"] != null)
+        {
+            <!-- Kullanıcı girişinde hata varsa, hata mesajını kırmızı renkte görüntüler. -->
+            <div style="color: red;">@ViewData["LoginError"]</div>
+        }
+
+        <div>
+            <!-- Giriş yap butonu. Formu göndermek için kullanılır. -->
+            <button type="submit">Giriş</button>
+        </div>
+    </form>
+</div>

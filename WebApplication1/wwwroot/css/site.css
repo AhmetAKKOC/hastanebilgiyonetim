@@ -1,0 +1,65 @@
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+/* Arka plan */
+body {
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/* site.css veya baþka bir stil dosyasý */
+.custom-image {
+    width: 250px; /* Resmin geniþliði */
+    height: auto; /* Resmin oranýna göre otomatik yükseklik */
+    margin-top: -20px; /* Üstten boþluk */
+    margin-left: auto; /* Otomatik sol kenar boþluðu */
+    margin-right: -50px; /* Otomatik sað kenar boþluðu */
+    display: block; /* Blok öðe olarak görüntüleme */
+}
+
+/* Privacy sayfasýnýn arka plan rengi 
+.privacy-page {
+    background-color: lightblue;
+}
+    */
+
+/* site.css */
+.login-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* site.css */
+h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+/* styles.css */
+
+.büyük-baþlýk {
+    font-size: 20px; /* Baþlýk boyutunu burada ayarlayabilirsiniz */
+}

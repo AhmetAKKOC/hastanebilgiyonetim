@@ -1,0 +1,50 @@
+﻿@using WebApplication1.Models;
+
+@model List<WebApplication1.Models.Patient>
+
+@{
+    // Sayfa başlığını belirlemek için ViewData üzerinden "Title" değerini kullanıyoruz.
+    ViewData["Title"] = "Privacy";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>Patient List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Telephone</th>
+            <th>TC Number</th>
+            <th>Gender</th>
+            <th>Birth Date</th>
+            <th>Add Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <!-- Hasta ID'si -->
+                <td>@patient.PATIENT_ID</td>
+                <!-- Hasta Adı -->
+                <td>@patient.PATIENT_NAME</td>
+                <!-- Hasta Soyadı -->
+                <td>@patient.PATIENT_LNAME</td>
+                <!-- Hasta Telefon Numarası -->
+                <td>@patient.PAT_TELEPHONE</td>
+                <!-- Hasta TC Kimlik Numarası -->
+                <td>@patient.TC_NO</td>
+                <!-- Hasta Cinsiyeti -->
+                <td>@patient.GENDER</td>
+                <!-- Hasta Doğum Tarihi -->
+                <td>@patient.BIRTH_DATE</td>
+                <!-- Kayıt Tarihi -->
+                <td>@patient.RECORD_DATE</td>
+            </tr>
+        }
+    </tbody>
+</table>

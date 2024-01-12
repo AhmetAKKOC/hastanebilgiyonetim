@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "~HASTA KAYIT EKRANI~";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/PatientStyle.css" />
+</head>
+
+<h2>@ViewData["Title"]</h2>
+
+@{
+    Layout = "_Layout"; // Navigasyon çubuğunu göster
+}
+<script>
+    function validatesayiInput(input) {
+      var regex = /^[0-9]+$/;
+      if (!regex.test(input.value)) {
+        //alert("Sadece rakam girilebilir!");
+        input.value = input.value.replace(/[^0-9]/g, ''); // Sadece rakamları tutar
+      }
+    }
+</script>
+
+<script>
+    function validateharfInput(input) {
+        var regex = /^[a-zA-Z]+$/;
+        if (!regex.test(input.value)) {
+            //alert("Sadece harf girilebilir!");
+            input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Sadece harfleri tutar
+        }
+    }
+
+</script>
+
+
+
+<form method="post" asp-controller="Hasta" asp-action="Kaydet">
+
+    <!-- Hasta Bilgileri Giriş Alanları -->
+
+    <div class="form-group">
+        <label for="patient_id">Hasta İd:</label>
+        <input type="number" id="patient_id" name="hasta_id" class="form-control" oninput="validateTcInput(this)" required>
+    </div>
+
+    <div class="form-group">
+        <label for="patient_name">Hasta Adı:</label>
+        <input type="text" id="patient_name" name="hasta_adı" class="form-control" oninput="validateharfInput(this)" required>
+    </div>
+
+    <div class="form-group">
+        <label for="patient_lname">Hasta Soyadı:</label>
+        <input type="text" id="patient_lname" name="hasta_soyadı" class="form-control" oninput="validateharfInput(this)" required>
+    </div>
+
+    <div class="form-group">
+        <label for="telephone">Telefon:</label>
+        <input type="number" id="telephone" name="telefon" class="form-control" oninput="validateTcInput(this)" required>
+    </div>
+
+    <div class="form-group">
+        <label for="tc_number">Tc no:</label>
+        <input type="number" id="tc_number" name="tc_umarası" class="form-control" oninput="validateTcInput(this)" required>
+    </div>
+
+    <div class="form-group">
+        <label for="adress">Adres:</label>
+        <input type="text" id="adress" name="adres" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="gender">Cinsiyet:</label>
+        <input type="text" id="gender" name="cinsiyet" class="form-control" oninput="validateharfInput(this)" required>
+    </div>
+
+    <div class="form-group">
+        <label for="birthdate">Doğum Tarihi:</label>
+        <input type="date" id="birthdate" name="dogum_tar" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="adddate">Kayıt Tarihi:</label>
+        <input type="date" id="adddate" name="kayıt_tar" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
